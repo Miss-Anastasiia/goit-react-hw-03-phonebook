@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Miss-Anastasiia/goit-react-hw-03-phonebook/static/css/main.d106bd65.css",
+    "main.js": "/Miss-Anastasiia/goit-react-hw-03-phonebook/static/js/main.3663af25.js",
+    "index.html": "/Miss-Anastasiia/goit-react-hw-03-phonebook/index.html",
+    "main.d106bd65.css.map": "/Miss-Anastasiia/goit-react-hw-03-phonebook/static/css/main.d106bd65.css.map",
+    "main.3663af25.js.map": "/Miss-Anastasiia/goit-react-hw-03-phonebook/static/js/main.3663af25.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d106bd65.css",
+    "static/js/main.3663af25.js"
+  ]
+}
