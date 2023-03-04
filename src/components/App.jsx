@@ -16,18 +16,27 @@ export class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
+   componentDidMount() {
+    const contactsToLocalStorage = localStorage.getItem(
+      'contactsToLocalStorage'
+    );
+
+    if (contactsToLocalStorage) {
+      try {
+        const parseContactList = JSON.parse(contactsToLocalStorage);
+        this.setState({ contacts: parseContactList });
+      } catch {
+        this.setState({ contacts: [] });
+      }
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
-      console.log('renewed contacts');
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+      localStorage.setItem(
+        'contactsToLocalStorage',
+        JSON.stringify(this.state.contacts)
+      );
     }
   }
 
