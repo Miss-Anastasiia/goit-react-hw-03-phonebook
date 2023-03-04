@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
+import  ContactForm from './ContactForm';
+import  ContactList  from './ContactList';
+import  Filter  from './Filter';
 import { nanoid } from 'nanoid';
 import './App.module.css';
 
@@ -30,20 +30,23 @@ export class App extends Component {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }
   }
+
   formSubmit = ({ name, number }) => {
     const contact = {
       id: nanoid(),
       name,
       number,
     };
-    this.state.contacts.some(
+
+    const enterContacts =  this.state.contacts.some(
       i =>
         (i.name.toLowerCase() === contact.name.toLowerCase() &&
           i.number === contact.number) ||
         i.name === contact.name ||
         i.number === contact.number
     )
-      ? alert(`${name} is already in contacts`)
+    enterContacts
+      ? alert(`${name} or ${number} is already in contacts`)
       : this.setState(({ contacts }) => ({
           contacts: [contact, ...contacts],
         }));
